@@ -30,6 +30,27 @@ Catch this, then when you get the 2FA code, call it again with these arguments:
         code="your_2fa_code" # Should be six digit integer
     )
 
+For added security and to avoid hardcoding your credentials in your code, it's recommended that you use a `.env` file. To do this, create a file called `.env` in the root of your project and add the following lines:
+
+.. code-block:: bash
+
+    PUBLIC_USERNAME='<email associated with your Public account>'
+    PUBLIC_PASSWORD='<password associated with your Public account>'
+
+Then you can log in without passing any arguments:
+
+.. code-block:: python
+
+    from public_invest_api import Public
+    import os
+
+    public = Public()
+    public.login(
+        username=os.environ.get('PUBLIC_USERNAME'),
+        password=os.environ.get('PUBLIC_PASSWORD'),
+        wait_for_2fa=True
+    )
+
 Get Stock Holdings
 ------------------
 

@@ -2,12 +2,17 @@ name: Update Documentation
 
 on: [push, pull_request, workflow_dispatch]
 
+concurrency:
+  group: docs
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
 jobs:
   docs:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
         - uses: actions/checkout@v4
         - uses: actions/setup-python@v5

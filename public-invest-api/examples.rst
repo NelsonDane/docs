@@ -56,4 +56,4 @@ Placing Orders
     )
     print(order)
 
-These aren't all of the functions available, but are some of the most common ones. For a full list of functions, see the :ref:`Functions` section.
+While these examples don't cover all of the functions available, they do cover the most common ones. For a full list of functions, see the :ref:`Functions` section.
